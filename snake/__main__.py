@@ -18,6 +18,7 @@ from game.shared.point import Point
 
 def main():
     
+    # CLEAN UP
     # create the cast
     cast = Cast()
     cast.add_actor("foods", Food())

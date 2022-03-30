@@ -11,6 +11,7 @@ class KeyboardService:
         _keys (Dict[string, int]): The letter to key mapping.
     """
 
+# CLEAN UP BASED ON NEW GAME
     def __init__(self):
         """Constructs a new KeyboardService."""
         self._keys = {}

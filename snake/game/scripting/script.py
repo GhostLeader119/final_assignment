@@ -48,3 +48,30 @@ class Script:
         """
         if group in self._actions:
             self._actions[group].remove(action)
+
+
+
+
+# ADD NEW SCRIPTS:
+# - Staging
+# - Calculate scores attached to fruit
+# # 
+# SCORE: 0
+# FOOD_POINTS: 100,000
+
+#        -50,000
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |
+#         |

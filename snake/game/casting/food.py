@@ -21,6 +21,8 @@ class Food(Actor):
         self.set_color(constants.RED)
         self.reset()
         
+        # NEEDS TO BE CHANGED:
+        # - Needs patterned movement
     def reset(self):
         """Selects a random position and points that the food is worth."""
         self._points = random.randint(1, 8)
@@ -37,3 +39,5 @@ class Food(Actor):
             points (int): The points the food is worth.
         """
         return self._points
+
+        

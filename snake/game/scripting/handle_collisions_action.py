@@ -47,6 +47,7 @@ class HandleCollisionsAction(Action):
             score.add_points(points)
             food.reset()
     
+    # PROBABLY NEEDS TO BE REMOVED
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
         
@@ -61,6 +62,7 @@ class HandleCollisionsAction(Action):
             if head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
         
+    # CLEANUP ACCORDINGLY
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
         

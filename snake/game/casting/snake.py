@@ -20,6 +20,8 @@ class Snake(Actor):
     def get_segments(self):
         return self._segments
 
+    # NEEDS TO BE CHANGED:
+    # - Restrict to horizontal
     def move_next(self):
         # move all segments
         for segment in self._segments:
@@ -34,6 +36,8 @@ class Snake(Actor):
     def get_head(self):
         return self._segments[0]
 
+    # NEEDS TO BE CHANGED:
+    # - Growth is the entire object
     def grow_tail(self, number_of_segments):
         for i in range(number_of_segments):
             tail = self._segments[-1]
@@ -51,6 +55,8 @@ class Snake(Actor):
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
     
+        # NEEDS TO BE CHANGED:
+        # - Body is not a snake
     def _prepare_body(self):
         x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y / 2)
