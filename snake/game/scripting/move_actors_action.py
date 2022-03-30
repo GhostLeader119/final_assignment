@@ -1,4 +1,7 @@
-from game.scripting.action import Action
+try:
+    from game.scripting.action import Action
+except ModuleNotFoundError:
+    print('Error: Could not import [Action] in [move_actors_action.py]')
 
 
 class MoveActorsAction(Action):

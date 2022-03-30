@@ -1,8 +1,21 @@
-import constants
-from game.casting.actor import Actor
-from game.scripting.action import Action
-from game.shared.point import Point
+try:
+    import constants
+except ModuleNotFoundError:
+    print('Error: Could not import [constants] in [handle_collisions_action.py]')
+try:
+    from game.casting.actor import Actor
+except ModuleNotFoundError:
+    print('Error: Could not import [Actor] in [handle_collisions_action.py]')
+try:
+    from game.scripting.action import Action
+except ModuleNotFoundError:
+    print('Error: Could not import [Action] in [handle_collisions_action.py]')
+try:
+    from game.shared.point import Point
+except ModuleNotFoundError:
+    print('Error: Could not import [Point] in [handle_collisions_action.py]')
 
+    
 class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
@@ -27,7 +40,6 @@ class HandleCollisionsAction(Action):
         """
         if not self._is_game_over:
             self._handle_food_collision(cast)
-            self._handle_segment_collision(cast)
             self._handle_game_over(cast)
 
     def _handle_food_collision(self, cast):
@@ -46,21 +58,37 @@ class HandleCollisionsAction(Action):
             snake.grow_tail(points)
             score.add_points(points)
             food.reset()
+
+    def _handle_zone_collision(self,cast):
+        '''
+        Checks to see if the player avatar is located in the two end zones to end the round.
+
+        Inputs:
+        Cast should be the X value of the players location.
+        Outputs:
+        Returns a 1 for if the player is in zone 1 or 2 if player is in zone 2
+
+        Zone 1  |  Zone 2
+                |
+                |
+                |
+                |
+
+        '''
+        zone_1_max_x = constants.zone_1_max_x
+        zone_1_min_x = constants.zone_1_min_x
+        zone_2_max_x = constants.zone_2_max_x
+        zone_2_min_x = constants.zone_2_min_x
+
+        if cast >= zone_1_min_x and cast <= zone_1_max_x:
+
+            return 1
+        elif cast >= zone_2_min_x and cast <= zone_2_max_x:
+
+            return 2
+
+
     
-    # PROBABLY NEEDS TO BE REMOVED
-    def _handle_segment_collision(self, cast):
-        """Sets the game over flag if the snake collides with one of its segments.
-        
-        Args:
-            cast (Cast): The cast of Actors in the game.
-        """
-        snake = cast.get_first_actor("snakes")
-        head = snake.get_segments()[0]
-        segments = snake.get_segments()[1:]
-        
-        for segment in segments:
-            if head.get_position().equals(segment.get_position()):
-                self._is_game_over = True
         
     # CLEANUP ACCORDINGLY
     def _handle_game_over(self, cast):
