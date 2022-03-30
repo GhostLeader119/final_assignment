@@ -1,6 +1,11 @@
-import pyray
-import constants
-
+try:
+    import pyray
+except ModuleNotFoundError:
+    print('Error: Could not import [pyray] in [video_service.py]')
+try:
+    import constants
+except ModuleNotFoundError:
+    print('Error: Could not import [constants] in [video_service.py]')
 
 class VideoService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state 
