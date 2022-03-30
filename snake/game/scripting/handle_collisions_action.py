@@ -75,10 +75,11 @@ class HandleCollisionsAction(Action):
                 |
 
         '''
-        zone_1_max_x = constants.zone_1_max_x
-        zone_1_min_x = constants.zone_1_min_x
-        zone_2_max_x = constants.zone_2_max_x
-        zone_2_min_x = constants.zone_2_min_x
+        zone_1_max_x = constants.ZONE_1_MAX_X
+        zone_1_min_x = constants.ZONE_1_MIN_X
+        zone_2_max_x = constants.ZONE_2_MAX_X
+        zone_2_min_x = constants.ZONE_2_MIN_X
+
 
         if cast >= zone_1_min_x and cast <= zone_1_max_x:
 
