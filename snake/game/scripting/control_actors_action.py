@@ -22,6 +22,7 @@ class ControlActorsAction(Action):
         self._keyboard_service = keyboard_service
         self._direction = Point(constants.CELL_SIZE, 0)
 
+    # ADAPT TO THE NEW MOVEMENTS
     def execute(self, cast, script):
         """Executes the control actors action.
 
