@@ -40,7 +40,6 @@ class HandleCollisionsAction(Action):
         """
         if not self._is_game_over:
             self._handle_food_collision(cast)
-            self._handle_segment_collision(cast)
             self._handle_game_over(cast)
 
     def _handle_food_collision(self, cast):
@@ -59,6 +58,36 @@ class HandleCollisionsAction(Action):
             snake.grow_tail(points)
             score.add_points(points)
             food.reset()
+
+    def _handle_zone_collision(self,cast):
+        '''
+        Checks to see if the player avatar is located in the two end zones to end the round.
+
+        Inputs:
+        Cast should be the X value of the players location.
+        Outputs:
+        Returns a 1 for if the player is in zone 1 or 2 if player is in zone 2
+
+        Zone 1  |  Zone 2
+                |
+                |
+                |
+                |
+
+        '''
+        zone_1_max_x = constants.zone_1_max_x
+        zone_1_min_x = constants.zone_1_min_x
+        zone_2_max_x = constants.zone_2_max_x
+        zone_2_min_x = constants.zone_2_min_x
+
+        if cast >= zone_1_min_x and cast <= zone_1_max_x:
+
+            return 1
+        elif cast >= zone_2_min_x and cast <= zone_2_max_x:
+
+            return 2
+
+
     
         
     # CLEANUP ACCORDINGLY
