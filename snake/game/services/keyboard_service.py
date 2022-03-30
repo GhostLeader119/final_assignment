@@ -1,6 +1,11 @@
-import pyray
-from game.shared.point import Point
-
+try:
+    import pyray
+except ModuleNotFoundError:
+    print('Error: Could not import [pyray] in [keyboard_service.py]')
+try:
+    from game.shared.point import Point
+except ModuleNotFoundError:
+    print('Error: Could not import [Point] in [keyboard_service.py]')
 
 class KeyboardService:
     """Detects player input. 
@@ -11,26 +16,22 @@ class KeyboardService:
         _keys (Dict[string, int]): The letter to key mapping.
     """
 
-# CLEAN UP BASED ON NEW GAME
+
     def __init__(self):
         """Constructs a new KeyboardService."""
         self._keys = {}
         
-        self._keys['w'] = pyray.KEY_W
+        
         self._keys['a'] = pyray.KEY_A
-        self._keys['s'] = pyray.KEY_S
         self._keys['d'] = pyray.KEY_D
 
-        self._keys['i'] = pyray.KEY_I
-        self._keys['j'] = pyray.KEY_J
-        self._keys['k'] = pyray.KEY_K
-        self._keys['l'] = pyray.KEY_L
+
 
     def is_key_up(self, key):
         """Checks if the given key is currently up.
         
         Args:
-            key (string): The given key (w, a, s, d or i, j, k, l)
+            key (string): The given key (a,d)
         """
         pyray_key = self._keys[key.lower()]
         return pyray.is_key_up(pyray_key)
@@ -39,7 +40,7 @@ class KeyboardService:
         """Checks if the given key is currently down.
         
         Args:
-            key (string): The given key (w, a, s, d or i, j, k, l)
+            key (string): The given key (a,d)
         """
         pyray_key = self._keys[key.lower()]
         return pyray.is_key_down(pyray_key)
