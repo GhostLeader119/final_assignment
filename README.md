@@ -1,8 +1,8 @@
-# Grower
+# MATH RACER
 
-Racer is played according to the following rules.
+Math Racer is played according to the following rules.
 
-See what size you will become as the pineapples are racing towards you. Each pineapple is given a number you will have to choose left or right to grow. Be careful some pinesapples will make you shrink. Lets see how big you can grow! 
+See what score you will get as the pineapples are racing towards you. Each pineapple is given a number you will have to choose left or right to earn  the most points. Be careful some pinesapples will make your score shrink. Lets see how high you can score! 
 
 
 Getting Started
@@ -18,6 +18,7 @@ The project files and folders are organized as follows:
 root                        (project root folder)
 +-- grower                   (source code for game)
   +-- game              (housing class files)
+    +--player                   (player class)
     +--actor                    (actor class)
     +--artifact              (artifact class)
     +--collision            (collision class) 
