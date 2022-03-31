@@ -41,4 +41,4 @@ shots28 - Sam Hootini
 
 
 Team Planner
-https://cconover2.notion.site/Git-Flow-ffe055d1466446779a1780186f7fe337
+https://cconover2.notion.site/Team-Planner-Final-Game-761d66393fbd41f49ad2daae998506ac
