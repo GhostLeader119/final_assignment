@@ -17,12 +17,29 @@ class Food(Actor):
         "Constructs a new Food."
         super().__init__()
         self._points = 0
-        self.set_text("@")
-        self.set_color(constants.RED)
+        # DO WE NEED THESE
+        # self.set_text("@")
+        # self.set_color(constants.RED)
         self.reset()
+
+    def food_left(self, texture = 'assets/happypine.png'):
+        if random.randint(1,2) == 1:
+            self._texture = 'assets/happypine.png'
+        else:
+            self._texture = 'assets/excitedpine.png'
+
+    def food_right(self, texture = 'assets/happypine.png'):
+        if random.randint(1,2) == 1:
+            self._texture = 'assets/happypine.png'
+        else:
+            self._texture = 'assets/excitedpine.png'
+
+    def food_Full_width(self, texture = 'assets/happypine.png'):
+        self._texture = 'assets/angrypine.png'
+
         
-        # NEEDS TO BE CHANGED:
-        # - Needs patterned movement
+    # NEEDS TO BE CHANGED:
+    # - Needs patterned movement
     def reset(self):
         """Selects a random position and points that the food is worth."""
         self._points = random.randint(1, 8)
@@ -38,6 +55,4 @@ class Food(Actor):
         Returns:
             points (int): The points the food is worth.
         """
-        return self._points
-
-        
+        return self._points   
