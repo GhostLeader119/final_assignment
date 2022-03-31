@@ -1,5 +1,4 @@
-import pyray as rl
-from raylib import Rectangle
+import pyray
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
@@ -17,13 +16,12 @@ class Player(Actor):
 
     def __init__(self, texture='assets/boy.png'):
         super().__init__()
-        self._texture = rl.load_texture(texture)
-        self._prepare_body()
+        self._texture = pyray.load_texture(texture)
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
 
-    def get_player(self):
-        return self._player
+    # def get_player(self):
+    #     return self
 
     def get_position(self):
         """Gets the actor's position in 2d space.
@@ -53,18 +51,17 @@ class Player(Actor):
         """
         self._velocity = velocity
 
-        # NEEDS TO BE CHANGED:
-        # - Body is not a snake
-
-    def _prepare_body(self):
+    def draw_player(self):
         x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y / 2)
 
-        for i in range(rl.draw_texture_tiled(self._texture)):
-            position = Point(x - i * constants.CELL_SIZE, y)
-            velocity = Point(1 * constants.CELL_SIZE, 0)
+        pyray.draw_texture(self._texture, self._position.get_x(),
+                           self._position.get_y(), pyray.RAYWHITE)
 
-            player = Actor()
-            player.set_position(position)
-            player.set_velocity(velocity)
-            # rl.RAYWHITE
+        # for i in range():
+        #     position = Point(x - i * constants.CELL_SIZE, y)
+        #     velocity = Point(1 * constants.CELL_SIZE, 0)
+
+        #     player = Actor()
+        #     player.set_position(position)
+        #     player.set_velocity(velocity)
