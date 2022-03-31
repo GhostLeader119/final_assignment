@@ -1,5 +1,5 @@
 import pyray as rl
-from raylib import Rectangle
+from pyray import Rectangle
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
