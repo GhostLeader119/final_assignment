@@ -1,4 +1,5 @@
 from game.casting.actor import Actor
+import math
 
 
 class Score(Actor):
@@ -24,4 +25,9 @@ class Score(Actor):
             points (int): The points to add.
         """
         self._points += points
+        self._points = int(math.ceil(self._points))
         self.set_text(f"Score: {self._points}")
+
+    def get_points(self):
+
+        return self._points

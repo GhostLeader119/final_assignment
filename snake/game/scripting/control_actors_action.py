@@ -50,3 +50,6 @@ class ControlActorsAction(Action):
         
         snake = cast.get_first_actor("snakes")
         snake.turn_head(self._direction)
+
+        food = cast.get_first_actor("foods")
+        food.set_velocity(Point(0, constants.CELL_SIZE))
