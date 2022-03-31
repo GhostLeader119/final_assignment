@@ -57,14 +57,19 @@ class HandleCollisionsAction(Action):
         if head.get_position().equals(food.get_position()):
             
             # snake.grow_tail(points)
-            current_score = score.get_points()
+            # current_score = score.get_points()
             
-            food.reset(current_score)
+            food.reset(score)
+            food.calculate_new_score(score)
 
-            points = food.get_points()
-            score.add_points(points)
+            # points = food.get_points()
+            # score.add_points(points)
             
-            print(777)
+            # print(777)
+
+        if food.get_position().at_bottom():
+
+            food.reset(score)
 
     # def _handle_zone_collision(self,cast):
     #     '''

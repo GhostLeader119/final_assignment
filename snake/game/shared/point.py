@@ -1,3 +1,5 @@
+import constants
+
 class Point:
     """A distance from a relative origin (0, 0).
 
@@ -41,7 +43,13 @@ class Point:
         Returns: 
             boolean: True if both x and y are equal; false if otherwise.
         """
-        return self._x -20 <= other.get_x() and other.get_x() <= self._x +20 and self._y -20 <= other.get_y() and other.get_y() <= self._y +20
+        return self._x -50 <= other.get_x() and other.get_x() <= self._x +50 and self._y -50 <= other.get_y() and other.get_y() <= self._y +50
+
+    def at_bottom(self):
+
+        y = constants.ROWS - 1
+
+        return self._y -5 <= y and y <= self._y +5
 
     def get_x(self):
         """Gets the horizontal distance.
