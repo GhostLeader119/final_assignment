@@ -1,6 +1,6 @@
-# MATH RACER
+# MATH PATH
 
-Math Racer is played according to the following rules.
+Math Path is played according to the following rules.
 
 See what score you will get as the pineapples are racing towards you. Each pineapple is given a number you will have to choose left or right to earn  the most points. Be careful some pinesapples will make your score shrink. Lets see how high you can score! 
 
