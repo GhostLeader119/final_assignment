@@ -6,9 +6,9 @@ from game.shared.point import Point
 
 class Food(Actor):
     """
-    A tasty item that snakes like to eat.
+    Food = Pineapples that are displayed on the screen and some earn points and 1 looses points. 
     
-    The responsibility of Food is to select a random position and points that it's worth.
+    The responsibility of Food is to select a randomly position either 2 pineapples with varing points to earn or one pineapple that has a negative impact on the players earnings. 
 
     Attributes:
         _points (int): The number of points the food is worth.
@@ -17,9 +17,6 @@ class Food(Actor):
         "Constructs a new Food."
         super().__init__()
         self._points = 0
-        # DO WE NEED THESE
-        # self.set_text("@")
-        # self.set_color(constants.RED)
         self.reset()
 
     def food_left(self, texture = 'assets/happypine.png'):
@@ -37,9 +34,7 @@ class Food(Actor):
     def food_Full_width(self, texture = 'assets/happypine.png'):
         self._texture = 'assets/angrypine.png'
 
-        
-    # NEEDS TO BE CHANGED:
-    # - Needs patterned movement
+    ### Find out if this is needed still
     def reset(self):
         """Selects a random position and points that the food is worth."""
         self._points = random.randint(1, 8)
