@@ -7,7 +7,7 @@ screenHeight = 650
 pyray.init_window(screenWidth, screenHeight,
                   b"[textures] example - image loading")
 
-image = pyray.load_image(b"path.png")
+image = pyray.load_image(b"assets/path.png")
 
 texture = pyray.load_texture_from_image(image)
 
