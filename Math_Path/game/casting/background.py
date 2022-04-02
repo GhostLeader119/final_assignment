@@ -1,30 +1,34 @@
 import pyray
+from game.services.video_service import VideoService
 
 
 screenWidth = 800
 screenHeight = 650
 
-pyray.init_window(screenWidth, screenHeight,
-                  b"[textures] example - image loading")
 
-image = pyray.load_image(b"assets/path.png")
+class Background(VideoService):
 
-texture = pyray.load_texture_from_image(image)
+    pyray.init_window(screenWidth, screenHeight,
+                      b"[textures] example - image loading")
 
-pyray.unload_image(image)
+    image = pyray.load_image(b"assets/path.png")
 
-while not pyray.window_should_close():
+    texture = pyray.load_texture_from_image(image)
 
-    pyray.begin_drawing()
+    pyray.unload_image(image)
 
-    pyray.clear_background(pyray.RAYWHITE)
+    while not pyray.window_should_close():
 
-    pyray.draw_texture(texture, int(screenWidth/2 - texture.width/2),
-                       int(screenHeight/2 - texture.height/2), pyray.WHITE)
+        pyray.begin_drawing()
 
-    pyray.end_drawing()
+        pyray.clear_background(pyray.RAYWHITE)
 
-pyray.unload_texture(texture)
+        pyray.draw_texture(texture, int(screenWidth/2 - texture.width/2),
+                           int(screenHeight/2 - texture.height/2), pyray.WHITE)
 
-# clean up
-pyray.close_window()
+        pyray.end_drawing()
+
+    pyray.unload_texture(texture)
+
+    # clean up
+    pyray.close_window()
