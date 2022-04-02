@@ -14,6 +14,7 @@ WHITE = Color(255, 255, 255)
 RED = Color(255, 0, 0)
 YELLOW = Color(255, 255, 0)
 GREEN = Color(0, 255, 0)
+PINK = Color(255, 192, 203)
 ZONE_1_MAX_X = 299
 ZONE_1_MIN_X = 0
 ZONE_2_MAX_X = 600
