@@ -16,8 +16,10 @@ from game.shared.color import Color
 from game.shared.point import Point
 
 
-def main():
 
+def main():
+    video_service = VideoService()
+    video_service.open_window()
     # CLEAN UP
     # create the cast
     cast = Cast()

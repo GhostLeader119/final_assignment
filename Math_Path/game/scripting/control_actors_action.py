@@ -1,15 +1,9 @@
-try:
-    import constants
-except ModuleNotFoundError:
-    print('Error: Could not import [constants] in [control_actors_action.py]')
-try:
-    from game.scripting.action import Action
-except ModuleNotFoundError:
-    print('Error: Could not import [Action] in [control_actors_action.py]')
-try:
-    from game.shared.point import Point
-except ModuleNotFoundError:
-    print('Error: Could not import [Action] in [control_actors_action.py]')
+import constants
+
+from game.scripting.action import Action
+
+from game.shared.point import Point
+
 
 
 class ControlActorsAction(Action):
@@ -49,4 +43,3 @@ class ControlActorsAction(Action):
         
         
         snake = cast.get_first_actor("snakes")
-        snake.turn_head(self._direction)

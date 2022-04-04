@@ -40,3 +40,6 @@ class KeyboardService:
         direction = direction.scale(self._cell_size)
 
         return direction
+
+    def is_key_down(self,input):
+        pass
