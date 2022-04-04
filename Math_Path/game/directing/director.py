@@ -22,11 +22,12 @@ class Director:
             cast (Cast): The cast of actors.
             script (Script): The script of actions.
         """
-        
+
         while self._video_service.is_window_open():
             self._execute_actions("input", cast, script)
             self._execute_actions("update", cast, script)
             self._execute_actions("output", cast, script)
+        
         self._video_service.close_window()
 
     def _execute_actions(self, group, cast, script):

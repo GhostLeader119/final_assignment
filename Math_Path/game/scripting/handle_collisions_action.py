@@ -51,13 +51,14 @@ class HandleCollisionsAction(Action):
         score = cast.get_first_actor("scores")
         food = cast.get_first_actor("foods")
         player = cast.get_first_actor("players")
-        head = player.get_head()
-
+        #head = player.get_head()
+        '''
         if head.get_position().equals(food.get_position()):
             points = food.get_points()
             player.grow_tail(points)
             score.add_points(points)
             food.reset()
+        '''
 
     def _handle_zone_collision(self,cast):
         '''

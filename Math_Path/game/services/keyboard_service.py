@@ -42,4 +42,7 @@ class KeyboardService:
         return direction
 
     def is_key_down(self,input):
-        pass
+        
+
+        key_translation = {'a': pyray.KEY_A, 'b': pyray.KEY_B }
+        return pyray.is_key_down(key_translation[input])

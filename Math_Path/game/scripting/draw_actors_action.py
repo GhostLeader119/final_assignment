@@ -4,6 +4,7 @@ except ModuleNotFoundError:
     print('Error: Could not import [Action] in [draw_actors_action.py]')
 
 
+
 class DrawActorsAction(Action):
     """
     An output action that draws all the actors.
@@ -32,12 +33,14 @@ class DrawActorsAction(Action):
         score = cast.get_first_actor("scores")
         food = cast.get_first_actor("foods")
         snake = cast.get_first_actor("snakes")
-        segments = snake.get_segments()
+        #segments = snake.get_segments()
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
+        #self._video_service.draw_actor(snake)
+        snake.draw_texture()
         self._video_service.draw_actor(food)
-        self._video_service.draw_actors(segments)
+        #self._video_service.draw_actors(segments)
         self._video_service.draw_actor(score)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()
