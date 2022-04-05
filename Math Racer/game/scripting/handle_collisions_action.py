@@ -58,14 +58,15 @@ class HandleCollisionsAction(Action):
             
             # snake.grow_tail(points)
             current_score = score.get_points()
-            print(f'Here is what I do! current_score {current_score}')
+            #print(f'Here is what I do! current_score {current_score}')
             
             food.reset(score)
             food.calculate_new_score(score)
 
             points = food.get_points()
             score.add_points(points)
-            print(f'Here is what I do! points {points}')
+            score.add_eternal_score(points)
+            #print(f'Here is what I do! points {points}')
             
             # print(777)
 

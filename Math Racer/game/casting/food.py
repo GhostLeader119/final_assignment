@@ -40,20 +40,22 @@ class Food(Actor):
         elif self.operation_int == 2:
             operation = "+ " + str(points)
             self.set_color(constants.GREEN)
-        
+            self._points = self._points * -1
         elif self.operation_int == 3:
             operation = "- " + str(points)
+            self._points = self._points * -1
             self.set_color(constants.RED)
 
         elif self.operation_int == 4:
             operation = "- " + str(points)
             self.set_color(constants.RED)
-
+            self._points = self._points * -1
         elif self.operation_int == 5:
             operation = "--H A P P Y--" + str(points)
             self.set_color(constants.PINK)
         else:
             operation = "--D E A T H--" + str(points)
+            self._points = (self._points * -1) * 100
             self.set_color(constants.RED)
         
         self.set_text(str(operation))
