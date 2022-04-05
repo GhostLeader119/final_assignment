@@ -45,7 +45,7 @@ class Score(Actor):
         self._points += points
         self._points = int(math.ceil(self._points))
         self.set_text(f"Score: {self._points}")
-        print(f'Here is add_points print! {self._points}')
+        #print(f'Here is add_points print! {self._points}')
 
     def set_points(self, points):
         """Adds the given points to the score's total points.
