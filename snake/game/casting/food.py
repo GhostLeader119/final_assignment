@@ -26,8 +26,8 @@ class Food(Actor):
         
     def reset(self, score):
         """Selects a random position and points that the food is worth."""
-        print(score._points)
-        print(self._points)
+        #print(score._points)
+        #print(self._points)
 
         self.operation_int = random.randint(1, 6)
         points = random.randint(1, 100)

@@ -53,17 +53,19 @@ class HandleCollisionsAction(Action):
         food = cast.get_first_actor("foods")
         snake = cast.get_first_actor("snakes")
         head = snake.get_head()
-    
+        
         if head.get_position().equals(food.get_position()):
             
             # snake.grow_tail(points)
-            # current_score = score.get_points()
+            current_score = score.get_points()
+            print(f'Here is what I do! current_score {current_score}')
             
             food.reset(score)
             food.calculate_new_score(score)
 
-            # points = food.get_points()
-            # score.add_points(points)
+            points = food.get_points()
+            score.add_points(points)
+            print(f'Here is what I do! points {points}')
             
             # print(777)
 
