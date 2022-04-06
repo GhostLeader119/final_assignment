@@ -36,11 +36,13 @@ class Food(Actor):
         if self.operation_int == 1:
             operation = "+ " + str(points)
             self.set_color(constants.GREEN)
+            self._points = self._points * 1
 
         elif self.operation_int == 2:
             operation = "+ " + str(points)
             self.set_color(constants.GREEN)
-            self._points = self._points * -1
+            self._points = self._points * 1
+
         elif self.operation_int == 3:
             operation = "- " + str(points)
             self._points = self._points * -1
@@ -50,14 +52,18 @@ class Food(Actor):
             operation = "- " + str(points)
             self.set_color(constants.RED)
             self._points = self._points * -1
+            
         elif self.operation_int == 5:
             operation = "--H A P P Y--" + str(points)
             self.set_color(constants.PINK)
+            self._points = self._points * 1
+
         else:
             operation = "--D E A T H--" + str(points)
-            self._points = (self._points * -1) * 100
             self.set_color(constants.RED)
-        
+            # self._points = (self._points * -1) * 100  
+            self._points = self._points * 0
+
         self.set_text(str(operation))
 
         x = random.randint(1, constants.COLUMNS - 1)
@@ -65,6 +71,7 @@ class Food(Actor):
         position = Point(x, y)
         position = position.scale(constants.CELL_SIZE)
         self.set_position(position)
+        return self._points
 
     def get_points(self):
         """Gets the points the food is worth.
@@ -78,23 +85,44 @@ class Food(Actor):
     def calculate_new_score(self, score):
         
         if self.operation_int == 1:
-            score._points = score._points + self._points
+            score = score._points + self._points
+
+            # score =+ self._points
+            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
 
         elif self.operation_int == 2:
-            score._points = score._points + self._points
+            score = score._points + self._points
+
+            # score =+ self._points
+            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
         
         elif self.operation_int == 3:
-            score._points = score._points - self._points
+            score = score._points - self._points
+
+            # score =- self._points
+            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
 
         elif self.operation_int == 4:
-            score._points = score._points - self._points
+            score = score._points - self._points
+
+            # score =- self._points
+            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
 
         elif self.operation_int == 5:
-            score._points = abs(score._points + (self._points * self._points))
+            score = abs(score._points + (self._points * self._points))
+
+            # score =+ self._points
+            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
 
         else:
-            score._points = 0
+            # score = score._points * 0
+            score = score._points - self._points
 
-        return score._points
+            # score =+ self._points
+            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
+
+
+
+        # return score._points
 
         

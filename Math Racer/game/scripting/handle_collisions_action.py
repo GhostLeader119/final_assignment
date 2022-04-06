@@ -57,7 +57,7 @@ class HandleCollisionsAction(Action):
         if head.get_position().equals(food.get_position()):
             
             # snake.grow_tail(points)
-            current_score = score.get_points()
+            # current_score = score.get_points()
             #print(f'Here is what I do! current_score {current_score}')
             
             food.reset(score)
