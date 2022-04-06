@@ -70,9 +70,9 @@ class HandleCollisionsAction(Action):
             
             # print(777)
 
-        if food.get_position().at_bottom():
+        # if food.get_position().at_bottom():
 
-            food.reset(score)
+        #     food.reset(score)
 
     # def _handle_zone_collision(self,cast):
     #     '''
