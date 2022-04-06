@@ -9,9 +9,10 @@ screenHeight = 650
 class Background(VideoService):
 
     pyray.init_window(screenWidth, screenHeight,
-                      b"[textures] example - image loading")
+                      "Path")
 
-    image = pyray.load_image(b"assets/path.png")
+    image = pyray.load_image(
+        "path.png")
 
     texture = pyray.load_texture_from_image(image)
 
@@ -21,7 +22,7 @@ class Background(VideoService):
 
         pyray.begin_drawing()
 
-        pyray.clear_background(pyray.RAYWHITE)
+        pyray.clear_background(pyray.WHITE)
 
         pyray.draw_texture(texture, int(screenWidth/2 - texture.width/2),
                            int(screenHeight/2 - texture.height/2), pyray.WHITE)

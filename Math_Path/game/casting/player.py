@@ -12,7 +12,7 @@ class Player(Actor):
         _points (int): The number of points the food is worth.
     """
 
-    def __init__(self, texture='assets/boy.png'):
+    def __init__(self, texture='boy.png'):
         super().__init__()
         self._texture = pyray.load_texture(texture)
 
