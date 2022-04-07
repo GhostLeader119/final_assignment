@@ -60,7 +60,7 @@ class HandleCollisionsAction(Action):
             # current_score = score.get_points()
             #print(f'Here is what I do! current_score {current_score}')
             
-            food.reset(score)
+            food.reset()
             food.calculate_new_score(score)
 
             points = food.get_points()
