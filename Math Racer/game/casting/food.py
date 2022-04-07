@@ -90,7 +90,7 @@ class Food(Actor):
 
         elif self.operation_int == 2:
             score = score._points + self._points
-            print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
+            # print(f'Here is what I do! score {score} self._points {self._points} self.operation_int {self.operation_int}')
         
         elif self.operation_int == 3:
             score = score._points - self._points
