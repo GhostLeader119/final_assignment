@@ -1,19 +1,19 @@
-try:
-    import constants
-except ModuleNotFoundError:
-    print('Error: Could not import [constants] in [handle_collisions_action.py]')
-try:
-    from game.casting.actor import Actor
-except ModuleNotFoundError:
-    print('Error: Could not import [Actor] in [handle_collisions_action.py]')
-try:
-    from game.scripting.action import Action
-except ModuleNotFoundError:
-    print('Error: Could not import [Action] in [handle_collisions_action.py]')
-try:
-    from game.shared.point import Point
-except ModuleNotFoundError:
-    print('Error: Could not import [Point] in [handle_collisions_action.py]')
+# try:
+import constants
+# except ModuleNotFoundError:
+#     print('Error: Could not import [constants] in [handle_collisions_action.py]')
+# try:
+from game.casting.actor import Actor
+# except ModuleNotFoundError:
+#     print('Error: Could not import [Actor] in [handle_collisions_action.py]')
+# try:
+from game.scripting.action import Action
+# except ModuleNotFoundError:
+#     print('Error: Could not import [Action] in [handle_collisions_action.py]')
+# try:
+from game.shared.point import Point
+# except ModuleNotFoundError:
+#     print('Error: Could not import [Point] in [handle_collisions_action.py]')
 
     
 class HandleCollisionsAction(Action):
@@ -61,12 +61,14 @@ class HandleCollisionsAction(Action):
             #print(f'Here is what I do! current_score {current_score}')
             
             food.reset()
-            food.calculate_new_score(score)
+            # food.calculate_new_score(score)
 
             points = food.get_points()
+            print(f'points = food.get_points() {points}')
             score.add_points(points)
+            print(f'score.add_points(points) {score}')
             score.add_eternal_score(points)
-            #print(f'Here is what I do! points {points}')
+            # print(f'score.add_eternal_score(points) {points}')
             
             # print(777)
 
