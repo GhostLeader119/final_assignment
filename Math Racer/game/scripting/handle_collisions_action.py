@@ -1,21 +1,8 @@
-# try:
 import constants
-# except ModuleNotFoundError:
-#     print('Error: Could not import [constants] in [handle_collisions_action.py]')
-# try:
 from game.casting.actor import Actor
-# except ModuleNotFoundError:
-#     print('Error: Could not import [Actor] in [handle_collisions_action.py]')
-# try:
 from game.scripting.action import Action
-# except ModuleNotFoundError:
-#     print('Error: Could not import [Action] in [handle_collisions_action.py]')
-# try:
 from game.shared.point import Point
-# except ModuleNotFoundError:
-#     print('Error: Could not import [Point] in [handle_collisions_action.py]')
 
-    
 class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
@@ -41,7 +28,6 @@ class HandleCollisionsAction(Action):
         if not self._is_game_over:
             self._handle_food_collision(cast)
             self._handle_game_over(cast)
-            # self._handle_zone_collision(cast)
 
     def _handle_food_collision(self, cast):
         """Updates the score nd moves the food if the snake collides with the food.
@@ -55,61 +41,13 @@ class HandleCollisionsAction(Action):
         head = snake.get_head()
         
         if head.get_position().equals(food.get_position()):
-            
-            # snake.grow_tail(points)
-            # current_score = score.get_points()
-            #print(f'Here is what I do! current_score {current_score}')
-            
-            food.reset()
-            # food.calculate_new_score(score)
-
             points = food.get_points()
             print(f'points = food.get_points() {points}')
             score.add_points(points)
             print(f'score.add_points(points) {score}')
-            score.add_eternal_score(points)
-            # print(f'score.add_eternal_score(points) {points}')
-            
-            # print(777)
-
-        # if food.get_position().at_bottom():
-
-        #     food.reset(score)
-
-    # def _handle_zone_collision(self,cast):
-    #     '''
-    #     Checks to see if the player avatar is located in the two end zones to end the round.
-
-    #     Inputs:
-    #     Cast should be the X value of the players location.
-    #     Outputs:
-    #     Returns a 1 for if the player is in zone 1 or 2 if player is in zone 2
-
-    #     Zone 1  |  Zone 2
-    #             |
-    #             |
-    #             |
-    #             |
-
-    #     '''
-        
-    #     zone_1_max_x = constants.ZONE_1_MAX_X
-    #     zone_1_min_x = constants.ZONE_1_MIN_X
-    #     zone_2_max_x = constants.ZONE_2_MAX_X
-    #     zone_2_min_x = constants.ZONE_2_MIN_X
-
-
-    #     if cast >= zone_1_min_x and cast <= zone_1_max_x:
-
-    #         return 1
-    #     elif cast >= zone_2_min_x and cast <= zone_2_max_x:
-
-    #         return 2
-
-
+            food.reset()
     
         
-    # CLEANUP ACCORDINGLY
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
         
